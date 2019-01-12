@@ -51,7 +51,7 @@ var HomePage = React.createClass({
             <div className="row"> 
               <div className="col-sm-3 col-md-2 sidebar"> 
                 <div className="text-center"> 
-                  <h2 className="brand">Contact2Sale <br /><small>Gestor de Leads</small></h2> 
+                  <h2 className="brand">Contact2sale <br /><small>Gestor de Leads</small></h2> 
                   <img src={require("../../../common/images/flat-avatar.jpeg")} className="user-avatar" />
                   <br /> 
                   <Link to="/login" className="btn btn-white btn-outline btn-rounded btn-sm">Logout</Link> 
