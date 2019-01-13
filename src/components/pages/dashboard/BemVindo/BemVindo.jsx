@@ -21,7 +21,7 @@ var Blank = React.createClass({
         <Jumbotron> 
           <h1>Bem vindo, {this.state.loginID}!</h1>
           <br />
-          <iframe className="ytplayer" width="640" height="390" rel="Vídeo de aṕresentação da Contact2Sale" src="https://www.youtube.com/embed/YEG-Y5E9v84?autoplay=1&showinfo=0&controls=0&disablekb=1"></iframe>
+          <iframe className="ytplayer" rel="Vídeo de aṕresentação da Contact2sale" src="https://www.youtube.com/embed/YEG-Y5E9v84?autoplay=1&showinfo=0&controls=0&disablekb=1"></iframe>
           <br /> 
           <br /> 
           <p> <a className="btn btn-primary btn-lg btn-outline btn-rounded" href="https://www.contact2sale.com/" target="_blank">Saiba mais</a> </p> 
