@@ -16,7 +16,7 @@ var Routes = React.createClass({
 
       return (
           <Route name="base" path="/" handler={BaseLayout}>
-            <Route name="dashboard" path="/dshboard" handler={DashboardLayout}>
+            <Route name="dashboard" path="/dashboard" handler={DashboardLayout}>
               <Route name="dashboard.bemvindo" path="/bemvindo" handler={DashboardBemVindoPage} />
               <Route name="dashboard.sobre" path="/sobre" handler={DashboardSobrePage} />
               <DefaultRoute name="dashboard.default" handler={DashboardBemVindoPage} />

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from "react-router";
-import {Jumbotron, Tabs, Tab, ProgressBar, Label, ButtonToolbar, Button} from 'react-bootstrap';
+import {Jumbotron, ButtonToolbar, Button} from 'react-bootstrap';
 import {History} from 'history';
 import PropTypes from 'prop-types';
 import ReactJoyride, { STATUS } from 'react-joyride';
+import LanguagesList from './LanguagesList';
 
 var Buttons = React.createClass({
   
@@ -24,7 +25,21 @@ var Buttons = React.createClass({
           content: 'Esta seção contém habilidades do desenvolvedor.',
         }
       ],
-      locale: { back: 'Anterior', close: 'Fechar', last: 'Último', next: 'Próximo', skip: 'Ignorar' }
+      locale: { back: 'Anterior', close: 'Fechar', last: 'Último', next: 'Próximo', skip: 'Ignorar' },
+      languages: [
+        { language:'JavaScript', capacity: 95 },
+        { language:'HTML5', capacity: 95 },
+        { language:'Java', capacity: 90 },
+        { language:'Python', capacity: 90 },
+        { language:'SQL', capacity: 90 },
+        { language:'CSS3', capacity: 90 },
+        { language:'TypeScript', capacity: 80 },
+        { language:'PHP', capacity: 80 },
+        { language:'C', capacity: 80 },
+        { language:'Haskell', capacity: 70 },
+        { language:'Bash', capacity: 70 },
+        { language:'C#', capacity: 65 }
+      ]
     }
   },
 
@@ -96,22 +111,7 @@ var Buttons = React.createClass({
     
     localStorage.setItem('lastVisited',window.location.href);
 
-    const languages = [
-      { language:'JavaScript', capacity: 95 },
-      { language:'HTML5', capacity: 95 },
-      { language:'Java', capacity: 90 },
-      { language:'Python', capacity: 90 },
-      { language:'SQL', capacity: 90 },
-      { language:'CSS3', capacity: 90 },
-      { language:'TypeScript', capacity: 80 },
-      { language:'PHP', capacity: 80 },
-      { language:'C', capacity: 80 },
-      { language:'Haskell', capacity: 70 },
-      { language:'Bash', capacity: 70 },
-      { language:'C#', capacity: 65 }
-    ];
-
-    const { run, steps, locale } = this.state;
+    const { run, steps, locale, languages } = this.state;
 
     return (
       <div key="sobre" className="reports-page">
@@ -164,13 +164,7 @@ var Buttons = React.createClass({
               <hr/>
               <div className="skills" tabIndex="1">
                 <h3>Habilidades</h3>
-                <ul>
-                {languages.map(function(lang, index){
-                  return (<li key={ index } >
-                        <Label bsStyle="primary">{lang.language}</Label><ProgressBar now={lang.capacity} label={`${lang.capacity}%`} />
-                      </li>);
-                })}
-                </ul>
+                <LanguagesList languages={languages}/>
               </div>
               <p> <a className="btn btn-primary btn-sm btn-outline btn-rounded" onClick={this.ngScopeFocus}>Ir para o topo</a> </p>
               <hr/>
